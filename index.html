@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do app</title>
+    <link rel="shortcut icon" href="scss/edit.svg">
+    <link rel="stylesheet" href="scss/styles.css">
+</head>
+
+<body>
+
+    <div class="thanks">
+        <img src="terence.jpg" width="100px" class="image">
+        <p>
+            hi there welcome to my todo app (CRUD APP).
+            my name is <span>timah terence</span>
+            am a passionate frontend developer at maxwell training douala bonajo.
+            with this application you can create, read, update and even delete your task.
+            my dream is to become a greate developer and a good hacker.
+            <span>please check out my other projects on github</span>
+        </p>
+
+        <div class="check">
+            <a href="https//:www.github.com" target="_blank" class="after">github<img src="github.svg" width="20px"
+                    class="git"></a>
+
+            <button type="button" class="after" id="after">check after</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="wrrapper">
+
+            <h4>
+                todo app
+            </h4>
+
+            <header class="header">
+                <div class="input">
+                    <p>
+                        add new task
+                        <span class="close">+</span>
+                    </p>
+                </div>
+            </header>
+            <h3>tasks
+                <span><button type="button" id="clear">clear all</button></span>
+            </h3>
+            <div class="taxes">
+                <div class="tasks">
+                    <p class="task">task 1</p>
+                    <p class="date">12-06-2026</p>
+                    <p class="gym">go top gym</p>
+                    <div class="icon">
+                        <img src="scss/edit.svg" width="30px" class="edit">
+                        <img src="scss/trash-alt.svg" width="30px" class="delete">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="toast-notification">
+            <div class="toastBtn">
+            </div>
+            <div class="toastBtn">
+            </div>
+        </div>
+
+        <div class="add_task">
+            <div class="wrap-form">
+                <form id="form">
+                    <span class="xmark">X</span>
+                    <span class="h4">
+                        <h4>
+                            add new task
+
+                        </h4>
+                    </span>
+
+                    <div class="input-group">
+                        <label for="input">task tittle</label>
+                        <input type="text" name="task" id="text" placeholder="e.g task 1">
+                    </div>
+                    <div class="input-group">
+                        <label for="input">due date</label>
+                        <input type="date" name="task" id="date" placeholder="e.g 22-11-2026">
+                    </div>
+                    <div class="input-group">
+                        <label for="input">description</label>
+                        <textarea name="text" id="area" placeholder="write a text here"></textarea>
+                    </div>
+                    <div class="line"></div>
+                    <div class="btn">
+                        <button type="button" class="btn-button" id="close">close</button>
+                        <button type="submit" class="btn-button" id="add">add</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="btn2">
+            <button type="button" id="start">start now</button>
+        </div>
+
+        <div class="overlay"></div>
+        <script src="scss/app.js"></script>
+</body>
+
+</html>

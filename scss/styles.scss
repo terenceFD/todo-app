@@ -1,0 +1,159 @@
+@import '../scss/main';
+@import '../scss/show';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgba(121, 169, 121, 0.59);
+	font-size: 16px;
+	font-family: sans-serif;
+	transition: all 0.5s;
+}
+
+.mode {
+	background: linear-gradient(180deg, rgb(65, 105, 225), rgb(100, 56, 181));
+	transition: all 0.5s linear;
+}
+
+.thanks {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 200;
+	background-color: #fff;
+	padding: 20px;
+	width: 350px;
+	transition: all 0.3s ease;
+	border-radius: 10px;
+
+	.image {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 50%;
+		margin-bottom: 15px;
+		position: relative;
+		left: 30%;
+	}
+
+	p {
+		margin-bottom: 20px;
+		line-height: 25px;
+		text-transform: capitalize;
+		color: #333;
+		text-align: justify;
+	}
+
+	span {
+		color: rgb(82, 23, 192);
+		font-weight: bold;
+	}
+	.check {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.after {
+		width: 100px;
+		padding: 10px;
+		text-transform: capitalize;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid #333;
+		box-shadow: 0 10px;
+		cursor: pointer;
+
+		&:active {
+			transform: scale(1.02);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: #333;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 120px;
+	}
+
+	.git {
+		margin-right: 20px;
+		position: relative;
+		left: 20%;
+	}
+}
+
+.activeE {
+	left: -1000px;
+	transition: all 0.3s ease;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgb(65, 105, 225), rgb(100, 56, 181));
+	transition: all 0.3s ease;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		animation: overlay 30s linear infinite;
+	}
+}
+
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+}
+
+@keyframes overlay {
+	10% {
+		width: 0%;
+		background-color: rgb(100, 56, 181);
+	}
+
+	20%{
+		background-color: rgba(46, 139, 86, 0.624);
+	}
+	30%{
+		background-color: rgb(29, 179, 179);
+	}
+	40%{
+		background-color: rgba(46, 111, 139, 0.624);
+	}
+	50%{
+		background-color: rgb(102, 51, 153);
+	}
+	60%{
+		background-color: rgba(153, 105, 51, 0.624);
+	}
+	70%{
+		background-color: rgb(77, 39, 148);
+	}
+	80%{
+		background-color: rgb(139, 56, 181);
+	}
+	90%{
+		background-color: rgb(41, 71, 140);
+	}
+	100% {
+		width: 100%;
+		background-color: rgb(65, 105, 225);
+		
+	}
+}

@@ -1,0 +1,224 @@
+@mixin flex($j) {
+	display: flex;
+	justify-content: $j;
+	align-items: center;
+}
+
+$background-color: rgba(121, 169, 121, 0.59);
+$color: #333;
+
+.container {
+	@include flex(center);
+	height: 100vh;
+
+	.wrrapper {
+		background-color: #fff;
+		border: 5px solid rgba(85, 137, 85, 0.831);
+		border-radius: 6px;
+		box-shadow:
+			0 10px 10px rgba($color: #000000, $alpha: 0.3),
+			0 -10px 10px rgba($color: #000000, $alpha: 0.3);
+		padding: 20px;
+		width: 400px;
+		height: 600px;
+		display: flex;
+		flex-direction: column;
+		transition: all 0.3s ease;
+		position: absolute;
+		top: 50%;
+		left: -300px;
+		transform: translate(-50%, -50%);
+		overflow: auto;
+		z-index: 300;
+
+		h4 {
+			text-transform: uppercase;
+			text-align: justify;
+			margin-bottom: 10px;
+			color: $color;
+			font-size: 20px;
+		}
+
+		.input {
+			width: 100%;
+			background-color: $background-color;
+			padding: 10px;
+			border-radius: 5px;
+			text-transform: capitalize;
+			cursor: pointer;
+
+			p {
+				@include flex(space-between);
+				color: $color;
+				font-size: 15px;
+			}
+			span {
+				font-size: 20px;
+				@include flex(center);
+				background-color: rgba(121, 169, 121, 0.767);
+				width: 25px;
+				height: 25px;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s;
+
+				&:hover {
+					color: #fff;
+					background-color: rgba(121, 169, 121, 0.767);
+				}
+				&:active {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		h3 {
+			text-align: center;
+			margin: 20px 0;
+			text-transform: capitalize;
+			color: $color;
+			font-size: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			#clear {
+				padding: 10px 20px;
+				text-transform: capitalize;
+				border-radius: 7px;
+				border: 2px solid rgba(121, 169, 121, 0.767);
+				cursor: pointer;
+				background-color: rgba(121, 169, 121, 0.767);
+				color: #333;
+			}
+		}
+
+		.tasks {
+			background-color: $background-color;
+			width: 100%;
+			padding: 10px;
+			position: relative;
+			overflow: auto;
+			border-radius: 20px;
+			margin: 0 0 20px 0;
+			border: 2px solid rgba(85, 137, 85, 0.831);
+			border-left: 10px solid royalblue;
+			
+			cursor: pointer;
+			
+			box-shadow:
+				0 10px 10px rgba(0, 0, 0, 0.3),
+				10px 0 10px rgba(0, 0, 0, 0.3);
+
+			.task {
+				color: $color;
+				font-size: 17px;
+				text-transform: capitalize;
+				margin: 10px 0;
+			}
+
+			.date {
+				color: #777;
+				margin: 10px 0;
+			}
+
+			.gym {
+				margin: 10px 0;
+				color: $color;
+			}
+
+			.icon {
+				@include flex(center);
+				gap: 20px;
+
+				img {
+					width: 17px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.toast-notification {
+		width: 300px;
+		position: fixed;
+		right: 30px;
+		top: 40px;
+
+		.toastBtn {
+			margin-bottom: 20px;
+			background-color: #fff;
+			border-radius: 10px;
+			border: 2px solid royalblue;
+			width: 100%;
+			text-transform: capitalize;
+			padding: 30px 10px;
+			transition: all 0.3s linear;
+			opacity: 0;
+
+			p {
+				width: 100%;
+				color: rgb(100, 56, 181);
+				font-size: 16px;
+				position: relative;
+				bottom: -10px;
+				text-align: center;
+				font-weight: bold;
+
+				img {
+					width: 20px;
+					position: absolute;
+					right: 8px;
+					top: -25px;
+				}
+			}
+			ul {
+				margin-top: 30px;
+				list-style: none;
+				color: rgb(56, 169, 181);
+				font-size: 16px;
+				padding-left: 20px;
+				text-transform: capitalize;
+				width: 100%;
+				position: relative;
+
+				li {
+					margin: 15px 0;
+					position: relative;
+					&::before {
+						content: '👉';
+						margin-right: 10px;
+					}
+				}
+
+				img {
+					width: 20px;
+					position: absolute;
+					right: 8px;
+					bottom: -25px;
+				}
+			}
+		}
+		.hide {
+			opacity: 1;
+			transition: all 0.3s linear;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.wrrapper {
+			height: 600px;
+			width: 350px;
+		}
+	}
+	@media (max-width: 768px) {
+		.toast-notification {
+			display: none;
+		}
+	}
+
+	.active {
+		left: 50%;
+		transition: all 0.3s linear;
+	}
+}
